@@ -5,8 +5,33 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import permalink
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 
 from blog.managers import *
+
+class Module(models.Model):
+	"""
+	Photo gallery site.
+	"""
+	MODULE_TYPE_CHOICES = (
+		(1, 'Footer'),
+		(2, 'Description'),
+	)
+	site		= models.ForeignKey(Site)
+	module_type	= models.IntegerField(_('module type'), choices=MODULE_TYPE_CHOICES)
+	body		= models.TextField(_('body'), help_text=_("Use Raw HTML"))
+	
+	class Meta:
+		verbose_name		= _('module')
+		verbose_name_plural	= _('modules')
+		db_table			= 'photo_modules'
+		ordering			= ('module_type', 'site',)
+	
+	class Admin:
+		list_display	= ('module_type', 'site',)
+	
+	def __unicode__(self):
+		return "%s - %s" % (self.site, self.module_type)
 
 class Gallery(models.Model):
 	"""
@@ -49,7 +74,7 @@ class Photo(models.Model):
 	
 	original	= models.ImageField(_('original'), upload_to='photos/o/%Y-%m-%d')
 	large		= models.ImageField(_('large'), upload_to='photos/l/%Y-%m-%d',  editable=False)
-	thumbnail		= models.ImageField(_('thumbnail'), upload_to='photos/t/%Y-%m-%d',  editable=False)
+	thumbnail	= models.ImageField(_('thumbnail'), upload_to='photos/t/%Y-%m-%d',  editable=False)
 	
 	created		= models.DateTimeField(_('created'), auto_now_add=True)
 	modified	= models.DateTimeField(_('modified'), auto_now=True)

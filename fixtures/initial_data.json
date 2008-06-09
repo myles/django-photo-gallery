@@ -1,0 +1,20 @@
+[
+	{
+		"model" : "photos.module",
+		"pk" : 1,
+		"fields" : {
+			"site" : 1,
+			"module_type" : 1,
+			"body" : "<hr>\n<p>Gallery desgin by <a href=\"http://stopdesign.com/\">Stopdesign</a>.Stopdesign</a>.\nPowered by <a href=\"http://djangoproject.com/\">Django</a><br>\n<a href=\"http://stopdesign.com/templates/photos/\">Templates available</a> for anyone to use.</p>",
+		}
+	},
+	{
+		"model" : "photos.module",
+		"pk" : 2,
+		"fields" : {
+			"site" : 1,
+			"module_type" : 2,
+			"body" : "<p>You&#8217;re viewing a set of galleries featuring the photos I have taken recently.</p><p>The <a href=\"http://stopdesign.com/templates/photos/\">templates</a> that build these pages are available for anyone to download and use.</p>"
+		}
+	}
+]
