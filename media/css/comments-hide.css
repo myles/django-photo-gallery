@@ -1,0 +1,9 @@
+#hidecomments, #comments, #addcomment {
+  display:none;
+  }
+#showcomments {
+  display:inline;
+  }
+#addcommentbutton {
+  display:block;
+  }

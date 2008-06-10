@@ -94,7 +94,8 @@ class Photo(models.Model):
 	@permalink
 	def get_absolute_url(self):
 		return ('photo_detail', None, {
-			'slug'		: self.slug,
+			'photo_slug'	: self.slug,
+			'gallery_slug'	: self.gallery.slug,
 		})
 	
 	def save(self):
