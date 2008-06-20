@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-12 12:23-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:21
+msgid "module type"
+msgstr ""
+
+#: models.py:22
+msgid "body"
+msgstr ""
+
+#: models.py:22
+msgid "Use Raw HTML"
+msgstr ""
+
+#: models.py:25
+msgid "module"
+msgstr ""
+
+#: models.py:26
+msgid "modules"
+msgstr ""
+
+#: models.py:40 models.py:68
+msgid "title"
+msgstr ""
+
+#: models.py:41 models.py:69
+msgid "slug"
+msgstr ""
+
+#: models.py:42 models.py:71
+msgid "description"
+msgstr ""
+
+#: models.py:43 models.py:79
+msgid "created"
+msgstr ""
+
+#: models.py:44 models.py:80
+msgid "modified"
+msgstr ""
+
+#: models.py:47
+msgid "gallery"
+msgstr ""
+
+#: models.py:48
+msgid "galleries"
+msgstr ""
+
+#: models.py:70
+msgid "location"
+msgstr ""
+
+#: models.py:73
+msgid "favorite"
+msgstr ""
+
+#: models.py:75
+msgid "original"
+msgstr ""
+
+#: models.py:76
+msgid "large"
+msgstr ""
+
+#: models.py:77
+msgid "thumbnail"
+msgstr ""
+
+#: models.py:83
+msgid "photo"
+msgstr ""
+
+#: models.py:84 templates/photos/gallery_title.html:13
+msgid "photos"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:26
+msgid "Feed for this gallery"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:26
+#: templates/photos/gallery_index.html:38
+#: templates/photos/gallery_index.html:43
+#: templates/photos/gallery_index.html:48
+#: templates/photos/gallery_index.html:53
+#: templates/photos/gallery_title.html:13
+msgid "XML feed"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:29
+msgid "Display how many photos?"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:30
+msgid "25"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:30
+msgid "ALL"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:31
+msgid "per page"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:34
+msgid "In what order?"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:35
+msgid "old to new"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:35
+msgid "new to old"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:37
+msgid "Save"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:40
+#: templates/photos/gallery_archive.html:45
+#: templates/photos/gallery_index.html:8
+#: templates/photos/gallery_index.html:58
+#: templates/photos/gallery_title.html:18
+msgid "Photos"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:40
+msgid "of"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:41
+msgid "next page &raquo;"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:45
+msgid "Gallery"
+msgstr ""
+
+#: templates/photos/gallery_index.html:11
+msgid "Recently Updated Galleries"
+msgstr ""
+
+#: templates/photos/gallery_index.html:20
+msgid "Description"
+msgstr ""
+
+#: templates/photos/gallery_index.html:25
+#: templates/photos/gallery_index.html:51
+msgid "Favorites"
+msgstr ""
+
+#: templates/photos/gallery_index.html:33
+msgid "Gallery data"
+msgstr ""
+
+#: templates/photos/gallery_index.html:36
+msgid "Galleries"
+msgstr ""
+
+#: templates/photos/gallery_index.html:38
+msgid "RSS feed for recent galleries"
+msgstr ""
+
+#: templates/photos/gallery_index.html:41
+msgid "Photo"
+msgstr ""
+
+#: templates/photos/gallery_index.html:43
+msgid "RSS feed for recent photos"
+msgstr ""
+
+#: templates/photos/gallery_index.html:46
+msgid "Comment"
+msgstr ""
+
+#: templates/photos/gallery_index.html:53
+msgid "RSS feed for favorite photos"
+msgstr ""
+
+#: templates/photos/gallery_title.html:12
+msgid "Updated"
+msgstr ""
+
+#: templates/photos/gallery_title.html:14
+msgid "View gallery"
+msgstr ""
