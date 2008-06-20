@@ -1,0 +1,80 @@
+{% extends "photos/base_photos.html" %}
+{% load i18n %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+{% block body_id %}gallery_detail{% endblock %}
+{% block body_class %}gallery{% endblock %}
+
+{% block content %}
+	<div id="content">
+		<div class="galleryinfo">
+			<h1 id="{{ gallery.slug }}">{{ gallery.title }}</h1>
+			<p class="desc">
+				{{ gallery.description }}
+			</p>
+		</div>
+		
+		<ul class="slideset">
+			<li class="thumb">
+				<span class="backward">
+					<em style="background-image:url('{{ MEDIA_URL }}photos/img/moreslide_prev.gif');">
+						<a href="./" style="background:#fff;">Previous page</a>
+					</em>
+				</span>
+			</li>
+			{% for photo in photos %}
+				<li class="thumb">
+					<span class="{{ photo.location }}">
+						<em style="background-image:url('{{ photo.get_small_location }}');">
+							<a href="{{ photo.get_absolute_url }}">{{ photo.title }}</a>
+						</em>
+					</span>
+				</li>
+			{% endfor %}
+			<li class="thumb">
+				<span class="forward">
+					<em style="background-image:url('{{ MEDIA_URL }}photos/img/moreslide_next.gif');">
+						<a href="?start=51" style="background:#fff;">Next page</a>
+					</em>
+				</span>
+			</li>
+		</ul>
+		
+		<div class="galleryinfo">
+			<p>{% trans "Feed for this gallery:" %} <a href="{# gallery_feed #}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12" /></a></p>
+			<form action="." method="post" accept-charset="utf-8">
+				<fieldset>
+					<strong>Display how many posts?</strong>
+					<div>
+						<select name="quantity" id="quantity">
+							<option value="25" selected="selected">25</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+							<option value="all">ALL</option>
+						</select>
+						<label for="quantity">per page</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<strong>In what order?</strong>
+					<div>
+						<input type="radio" name="order" value="old" id="order-old" checked="checked">
+						<label for="order-old" class="selected">old to new</label>
+					</div>
+					<div>
+						<input type="radio" name="order" id="order-new" value="new" />
+						<label for="order-new">new to old</label>
+					</div>
+				</fieldset>
+				<p><input type="image" src="{{ MEDIA_URL }}photos/img/btn_save.gif" alt="Save" class="btn"></p>
+			</form>
+			<p>
+				<em class="count">{% trans "Photos" %} 1-25 of 132</em>
+				<a href="?start=26" accesskey="x">next page &raquo;</a>
+			</p>
+		</div>
+	</div>
+	
+	<p id="path"><a href="{% url photo_gallery_index %}">{% trans "Photos" %}</a> > <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a> > {% trans "Gallery" %}</p> 
+{% endblock %}

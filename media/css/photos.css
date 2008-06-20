@@ -1,3 +1,5 @@
+/* @override http://127.0.0.1:8000/media/photos/css/photos.css */
+
 /*
 -----------------------------------------------
 Photo Gallery Templates: Main Style Sheet
@@ -22,8 +24,8 @@ body {
   }
 #content {
   position:relative;
-  margin:1.6em 0 0;
-  padding:26px 15px 15px;
+  margin: 1.6em 0 0;
+  padding: 26px 15px 15px;
   }
 .photosolo #content {
   padding:25px 0 15px;

@@ -7,7 +7,7 @@ from django.db.models import permalink
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
-from blog.managers import *
+from photos.managers import *
 
 class Module(models.Model):
 	"""
@@ -47,7 +47,7 @@ class Gallery(models.Model):
 		verbose_name		= _('gallery')
 		verbose_name_plural	= _('galleries')
 		db_table			= 'photo_galleries'
-		ordering			= 'title'
+		ordering			= ('title',)
 	
 	class Admin:
 		list_display	= ('title',)
@@ -57,7 +57,13 @@ class Gallery(models.Model):
 	
 	@permalink
 	def get_absolute_url(self):
-	  	return ('photo_gallery_detail', None, {
+	  	return ('photo_gallery_title', None, {
+			'slug'	: self.slug
+		})
+	
+	@permalink
+	def get_gallery_url(self):
+		return ('photo_gallery_detail', None, {
 			'slug'	: self.slug
 		})
 
@@ -67,14 +73,14 @@ class Photo(models.Model):
 	"""
 	title		= models.CharField(_('title'), max_length=200)
 	slug		= models.SlugField(_('slug'), prepopulate_from=('title',), unique=True)
-	location	= models.CharField(_('location'), max_length=50 blank=True, null=True)
+	location	= models.CharField(_('location'), max_length=50, blank=True, null=True)
 	description	= models.TextField(_('description'), blank=True, null=True)
 	gallery		= models.ForeignKey(Gallery)
 	favorite	= models.BooleanField(_('favorite'), default=False)
 	
 	original	= models.ImageField(_('original'), upload_to='photos/o/%Y-%m-%d')
-	large		= models.ImageField(_('large'), upload_to='photos/l/%Y-%m-%d',  editable=False)
-	thumbnail	= models.ImageField(_('thumbnail'), upload_to='photos/t/%Y-%m-%d',  editable=False)
+	large		= models.ImageField(_('large'), upload_to='photos/l/%Y-%m-%d',  editable=False) # Image size no greater than 480x480
+	small		= models.ImageField(_('small'), upload_to='photos/s/%Y-%m-%d',  editable=False) # Image size no greater than 90x90
 	
 	created		= models.DateTimeField(_('created'), auto_now_add=True)
 	modified	= models.DateTimeField(_('modified'), auto_now=True)

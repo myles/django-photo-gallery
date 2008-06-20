@@ -5,7 +5,7 @@
 		"fields" : {
 			"site" : 1,
 			"module_type" : 1,
-			"body" : "<hr>\n<p>Gallery desgin by <a href=\"http://stopdesign.com/\">Stopdesign</a>.Stopdesign</a>.\nPowered by <a href=\"http://djangoproject.com/\">Django</a><br>\n<a href=\"http://stopdesign.com/templates/photos/\">Templates available</a> for anyone to use.</p>",
+			"body" : "Gallery desgin by <a href=\"http://stopdesign.com/\">Stopdesign</a>.\n\nPowered by <a href=\"http://djangoproject.com/\">Django</a><br>\n\n<a href=\"http://stopdesign.com/templates/photos/\">Templates available</a> for anyone to use."
 		}
 	},
 	{

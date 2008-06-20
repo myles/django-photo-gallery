@@ -1,3 +1,5 @@
+/* @override http://127.0.0.1:8000/media/photos/css/master.css */
+
 /*
 -----------------------------------------------
 Photo Gallery Templates: Screen Master
@@ -10,6 +12,6 @@ http://stopdesign.com/templates/photos/
 
 /* Imported Styles
 ----------------------------------------------- \*/
-@import url("photos\.css");
-@import url("labels\.css");
+@import url(photos.css);
+@import url(labels.css);
 /* */

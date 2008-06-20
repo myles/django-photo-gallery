@@ -1,0 +1,22 @@
+{% extends "photos/base_photos.html" %}
+{% load i18n %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+{% block body_id %}gallery_title{% endblock %}
+{% block body_class %}title{% endblock %}
+
+{% block content %}
+	<div id="content">
+		<h1><a href="{{ gallery.get_gallery_url }}"><img src="{{ gallery.title_image }}" alt="{{ gallery.title }}"></a></h1>
+		
+		<div id="gallerydesc">
+			<p class="desc">{{ gallery.description }}</p>
+			<p>{% trans "Updated" %}: {# gallery.last_updated #}</p>
+			<p>(<em>{# gallery.photo_count #} {% trans "photos" %}</em>) <a href="{# gallery_feed #}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></p>
+			<p><a href="{# gallery.get_gallery_url #}" class="i"><img src="{{ MEDIA_URL }}photos/img/btn_view_gallery.gif" alt="{% trans "View gallery" %}" width="97" height="21" /></a></p>
+		</div>
+	</div>
+	
+	<p id="path"><a href="{% url photo_gallery_index %}">{% trans "Photos" %}</a> > {{ gallery.title }}</p>
+{% endblock %}
