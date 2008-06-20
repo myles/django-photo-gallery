@@ -44,12 +44,12 @@
 				<table cellspacing="0" class="gallerydata">
 					<tr>
 						<th><a href="{% url photo_gallery_list %}">{% trans "Galleries" %}</a></th>
-						<td>{# galleries_count #}</td>
+						<td>{{ galleries_count }}</td>
 						<td><a href="{% url photo_galleries_feed %}" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 					<tr>
 						<th>{% trans "Photo" %}</th>
-						<td>{# photos_count #}</td>
+						<td>{{ photos_count }}</td>
 						<td><a href="{% url photos_feed %}" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 					<tr>

@@ -1,0 +1,39 @@
+{% extends "photos/base_photos.html" %}
+{% load i18n %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+{% block body_id %}gallery_archive{% endblock %}
+{% block body_class %}archive{% endblock %}
+
+{% block content %}
+	<div id="content">
+		<h1 id="gallery_archive">{% trans "Gallery Archive" %}</h1>
+		
+		<div class="galleries">
+			<h2 id="all_galleries">{% trans "All galleries" %}</h2>
+			<ul>
+				{% for gallery in galleries %}
+				<li>
+					<h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
+					<a href="{{ gallery.get_absolute_url }}" class="img"><img src="" alt="" width="220" height="69"></a>
+					<p><em>({{ gallery.get_photo_count }} photos)</em> {{ gallery.description }}</p>
+					<div class="date">{{ gallery.modified|date:"F Y" }}</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		
+		<div id="feeds">
+			<h2 id="gallery_feeds">{% trans "Gallery Feeds" %}</h2>
+			<ul>
+				<!-- TODO: Fix this -->
+				<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="RSS feed for recent galleries" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Galleries</a></li>
+				<li><a href="http://dbowman.com/photos/index.xml" title="RSS feed for recent photos" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Photos</a></li>
+				<li><a href="http://dbowman.com/photos/comments/comments.xml" title="RSS feed for recent comments" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Comments</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<p id="path"><a href="{% url photo_gallery_index %}">Photos</a> > Gallery Archive</p>  
+{% endblock %}
