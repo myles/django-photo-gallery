@@ -18,6 +18,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import permalink
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
+from django.conf import settings
 
 from photos.managers import *
 
@@ -78,6 +79,22 @@ class Gallery(models.Model):
 		return ('photo_gallery_detail', None, {
 			'slug'	: self.slug
 		})
+	
+	@property
+	def photo_count(self):
+		"""
+		How many photos are in a given gallery.
+		"""
+		count = Photo.objects.filter(gallery=self).count()
+		return u"%s" % count
+	
+	@property
+	def date_last_photo(self):
+		"""
+		Date of last photo uploaded to the gallery.
+		"""
+		photo = Photo.objects.order_by('-created')[:0]
+		return photo.created
 
 class Photo(models.Model):
 	"""
@@ -117,8 +134,19 @@ class Photo(models.Model):
 		})
 	
 	def save(self):
-		"""
-		We use PIL's Image object
-		Docs: http://www.pythonware.com/library/pil/handbook/image.htm
-		"""
+		LARGE_SIZE = (480, 480)
+		SMALL_SIZE = (90, 90)
 		
+		# TODO: Still thinking of a good way to to this.
+		# Need to convert the Photos to Large and Small thumbnails.
+		
+		super(Photo, self).save()
+	
+	def admin_thumbnail(self):
+		"""
+		Adds a photo thumbnail to the administration interface.
+		"""
+		return u"<img src=\"%s/%s\" />" % (settings.MEDIA_URL, self.small)
+	
+	admin_thumbnail.sort_description = 'Thumbnail'
+	admin_thumbnail.allow_tags = True
