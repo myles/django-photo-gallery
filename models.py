@@ -19,6 +19,7 @@ from django.db.models import permalink
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.conf import settings
+from django.utils.text import truncate_words
 
 from photos.managers import *
 
@@ -71,14 +72,23 @@ class Gallery(models.Model):
 	@permalink
 	def get_absolute_url(self):
 	  	return ('photo_gallery_title', None, {
-			'slug'	: self.slug
+			'gallery_slug'	: self.slug
 		})
 	
 	@permalink
 	def get_gallery_url(self):
 		return ('photo_gallery_detail', None, {
-			'slug'	: self.slug
+			'gallery_slug'	: self.slug
 		})
+	
+	@property
+	def latest_photo(self):
+		photo = Photo.objects.filter(gallery=self).order_by('-created')[:1]
+		return photo
+	
+	@property
+	def description_truncate(self):
+		return u"%s" % truncate_words(self.description, 20)
 	
 	@property
 	def photo_count(self):
@@ -109,6 +119,7 @@ class Photo(models.Model):
 	
 	original	= models.ImageField(_('original'), upload_to='photos/o/%Y-%m-%d')
 	large		= models.ImageField(_('large'), upload_to='photos/l/%Y-%m-%d',  editable=False) # Image size no greater than 480x480
+	thumbnail	= models.ImageField(_('thumbnail'), upload_to='photos/t/%Y-%m-%d', editable=False) # Image size no greater than 220x220
 	small		= models.ImageField(_('small'), upload_to='photos/s/%Y-%m-%d',  editable=False) # Image size no greater than 90x90
 	
 	created		= models.DateTimeField(_('created'), auto_now_add=True)
@@ -135,6 +146,7 @@ class Photo(models.Model):
 	
 	def save(self):
 		LARGE_SIZE = (480, 480)
+		THUMBNAIL_SIZE = (220, 220)
 		SMALL_SIZE = (90, 90)
 		
 		# TODO: Still thinking of a good way to to this.

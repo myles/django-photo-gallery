@@ -31,70 +31,72 @@
 {% block body_id %}gallery_index{% endblock %}
 {% block body_class %}index{% endblock %}
 
-{% block body %}
-	<div id="content">
-		<h1 id="photos">{% trans "Photos" %}</h1>
-		
-		<div class="galleries">
-			<h2 id="recently_updated_galleries">{% trans "Recently Updated Galleries" %}</h2>
-			<ul>
-				{% for gallery in galleries %}
-				<li>
-					<h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
-					<a href="{{ gallery.get_absolute_url }}" class="img"><img src="" alt="" width="220" height="69"></a>
-					<p><em>({# photo_count #})</em> {{ gallery.description }}</p>
-					<div class="date">{{ gallery.modified|date:"F Y" }}</div>
-				</li>
-				{% endfor %}
-			</ul>
+{% block content %}
+	<h1 id="photos">{% trans "Photos" %}</h1>
+	
+	<div class="galleries">
+		<h2 id="recently_updated_galleries">{% trans "Recently Updated Galleries" %}</h2>
+		<ul>
+			{% for gallery in galleries %}
+			<li>
+				<h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
+				<a href="{{ gallery.get_absolute_url }}" class="img">
+					<img src="{{ gallery.latest_photo.thumbnail }}" alt="{{ gallery.latest_photo.title }}" width="220" height="69">
+				</a>
+				<p><em>({{ gallery.photo_count }})</em> {{ gallery.description_truncate }}</p>
+				<div class="date"><p>{{ gallery.modified|date:"F Y" }}</p></div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div id="secondary">
+		<div class="module" id="description">
+			<h2>{% trans "Description" %}</h2>
+			{{ description.body|safe }}
 		</div>
 		
-		<div id="secondary">
-			<div class="module" id="description">
-				<h2>{% trans "Description" %}</h2>
-				{{ description.body|safe }}
-			</div>
-			
-			<div class="module" id="favorites">
-				<h2>{% trans "Favorites" %}</h2>
+		<div class="module" id="favorites">
+			<h2>{% trans "Favorites" %}</h2>
+			{% if favorites %}
 				<ul id="favlist">
 					{% for photo in favorites %}
-						<li><table><tr><td><a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_small_location }}" width="44.5" height="33.5" alt="{{ photo.title }}"></a></td></tr></table></li>
+						<li><table><tr><td><a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_small_url }}" width="44.5" height="33.5" alt="{{ photo.title }}"></a></td></tr></table></li>
 					{% endfor %}
 				</ul>
-			</div>
-			
-			<div class="module" id="gallery_data">
-				<h2>{% trans "Gallery data" %}</h2>
-				<table cellspacing="0" class="gallerydata">
-					<tr>
-						<th><a href="{% url photo_gallery_list %}">{% trans "Galleries" %}</a></th>
-						<td>{{ galleries_count }}</td>
-						<td><a href="{% url photo_galleries_feed %}" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
-					</tr>
-					<tr>
-						<th>{% trans "Photo" %}</th>
-						<td>{{ photos_count }}</td>
-						<td><a href="{% url photos_feed %}" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
-					</tr>
-					<tr>
-						<th><a href="{% url photo_comments %}">{% trans "Comment" %}</a></th>
-						<td>{# comments_count #}</td>
-						<td><a href="{% url photo_comments_feed %}" title="{% trans "RSS feed for recent comments" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
-					</tr>
-					<tr>
-	  					<th><a href="{% url photo_favorites %}">{% trans "Favorites" %}</a></th>
-						<td>{# favorites_count #}</td>
-						<td><a href="photos/favorites/index.xml" title="{% trans "RSS feed for favorite photos" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
-					</tr>
-				</table>
-			</div>
+			{% else %}
+				<p>No favorites selected yet.</p>
+			{% endif %}
 		</div>
-		<p id="path">{% trans "Photos" %}</p>
 		
-		<div id="footer">
-			<hr>
-			<p>{{ footer.body|safe }}</p>
+		<div class="module" id="gallery_data">
+			<h2>{% trans "Gallery data" %}</h2>
+			<table cellspacing="0" class="gallerydata">
+				<tr>
+					<th><a href="{% url photo_gallery_archive %}">{% trans "Galleries" %}</a></th>
+					<td>{{ galleries_count }}</td>
+					<td><a href="{% url photo_galleries_feed %}" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11"></a></td>
+				</tr>
+				<tr>
+					<th>{% trans "Photo" %}</th>
+					<td>{{ photos_count }}</td>
+					<td><a href="{% url photos_feed %}" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11"></a></td>
+				</tr>
+				<tr>
+					<th><a href="{% url photo_comments %}">{% trans "Comment" %}</a></th>
+					<td>{# comments_count #}</td>
+					<td><a href="{% url photo_comments_feed %}" title="{% trans "RSS feed for recent comments" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11"></a></td>
+				</tr>
+				<tr>
+  					<th><a href="{% url photo_favorites %}">{% trans "Favorites" %}</a></th>
+					<td>{{ favorites_count }}</td>
+					<td><a href="photos/favorites/index.xml" title="{% trans "RSS feed for favorite photos" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11"></a></td>
+				</tr>
+			</table>
 		</div>
 	</div>
+{% endblock %}
+
+{% block path %}
+	{% trans "Photos" %}
 {% endblock %}

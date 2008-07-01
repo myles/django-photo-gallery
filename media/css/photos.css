@@ -12,60 +12,69 @@ http://stopdesign.com/templates/photos/
 ----------------------------------------------- */
 
 body {
-  background:#ddd url("../img/bg_page.jpg") repeat-x 0 0;
-  margin:0;
-  padding:0;
-  font:small Verdana,Sans-serif;
-  line-height:1.6em;
-  color:#333;
-  }
+	background:#ddd url("../img/bg_page.jpg") repeat-x 0 0;
+	margin:0;
+	padding:0;
+	font:small Verdana,Sans-serif;
+	line-height:1.6em;
+	color:#333;
+}
+
 .title, .index {
-  text-align:center;
-  }
+	text-align:center;
+}
+
 #content {
-  position:relative;
-  margin: 1.6em 0 0;
-  padding: 26px 15px 15px;
-  }
+	position:relative;
+	margin: 1.6em 0 0;
+	padding: 26px 15px 15px;
+}
+
 .photosolo #content {
-  padding:25px 0 15px;
-  }
+	padding:25px 0 15px;
+}
+
 .index #content, .archive #content {
-  width:720px;
-  margin-left:auto;
-  margin-right:auto;
-  }
+	width:720px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
 .title #content {
-  width:733px;
-  margin-left:auto;
-  margin-right:auto;
-  padding:40px 20px 0;
-  text-align:left;
-  }
+	width:733px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:40px 20px 0;
+	text-align:left;
+}
+
 .comments-entry #content {
-  max-width:50em;
-  margin-top:1em;
-  margin-left:133px;
-  padding-top:0;
-  }
+	max-width:50em;
+	margin-top:1em;
+	margin-left:133px;
+	padding-top:0;
+}
+
 .recentcomments #content {
-  width:750px;
-  max-width:50em;
-  margin-left:auto;
-  margin-right:auto;
-  }
+	width:750px;
+	max-width:50em;
+	margin-left:auto;
+	margin-right:auto;
+}
+
 .recentcomments>#content {
-  width:auto;
-  }
+	width:auto;
+}
 
 
 /* =Links
 ----------------------------------------------- */
 a, a:visited {
-  color:#258;
-  text-decoration:none;
-  border-bottom:1px solid #469;
-  }
+	color:#258;
+	text-decoration:none;
+	border-bottom:1px solid #469;
+}
+
 html>body a, html>body a:visited {
   border-bottom-style:dotted;
   }

@@ -36,10 +36,10 @@
 {% endblock %}
 
 {% block body %}
-	{% block content %}{% endblock %}
-	
+	<div id="content">{% block content %}{% endblock %}</div>
 	<div id="footer">
 		<hr>
-		<p>{# site_footer #}</p>
+		<p>{{ footer.body|safe }}</p>
 	</div>
+	<p id="path">{% block path %}{% endblock %}</p>
 {% endblock %}
