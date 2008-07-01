@@ -1,3 +1,5 @@
+{% extends "photos/base_photos.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -22,8 +24,7 @@
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
 
-{% extends "photos/base_photos.html" %}
-{% load i18n %}
+{% load i18n photos %}
 
 {% block title %}{{ gallery.title }}{% endblock %}
 
@@ -37,8 +38,8 @@
 		<div id="gallerydesc">
 			<p class="desc">{{ gallery.description }}</p>
 			<p>{% trans "Updated" %}: {# gallery.last_updated #}</p>
-			<p>(<em>{# gallery.photo_count #} {% trans "photos" %}</em>) <a href="{# gallery_feed #}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></p>
-			<p><a href="{# gallery.get_gallery_url #}" class="i"><img src="{{ MEDIA_URL }}photos/img/btn_view_gallery.gif" alt="{% trans "View gallery" %}" width="97" height="21" /></a></p>
+			<p>(<em>{# gallery.photo_count #} {% trans "photos" %}</em>) <a href="{# gallery_feed #}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></p>
+			<p><a href="{# gallery.get_gallery_url #}" class="i"><img src="{% photo_media_prefix %}img/btn_view_gallery.gif" alt="{% trans "View gallery" %}" width="97" height="21" /></a></p>
 		</div>
 	</div>
 	

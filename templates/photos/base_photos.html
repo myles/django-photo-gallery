@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -22,7 +24,7 @@
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
 
-{% extends "base.html" %}
+{% load photos %}
 
 {% block title %}Untitled{% endblock %}
 
@@ -30,7 +32,7 @@
 {% block body_class %}photos{% endblock %}
 
 {% block head %}
-	<link rel="stylesheet" href="{{ MEDIA_URL }}photos/css/master.css" type="text/css" media="screen, projection" charset="utf-8">
+	<link rel="stylesheet" href="{% photo_media_prefix %}css/master.css" type="text/css" media="screen, projection" charset="utf-8">
 {% endblock %}
 
 {% block body %}

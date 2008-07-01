@@ -1,3 +1,5 @@
+{% extends "photos/base_photos.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -22,8 +24,7 @@
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
 
-{% extends "photos/base_photos.html" %}
-{% load i18n %}
+{% load i18n photos %}
 
 {% block title %}{% trans "Photos" %}{% endblock %}
 
@@ -69,22 +70,22 @@
 					<tr>
 						<th><a href="{% url photo_gallery_list %}">{% trans "Galleries" %}</a></th>
 						<td>{{ galleries_count }}</td>
-						<td><a href="{% url photo_galleries_feed %}" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
+						<td><a href="{% url photo_galleries_feed %}" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 					<tr>
 						<th>{% trans "Photo" %}</th>
 						<td>{{ photos_count }}</td>
-						<td><a href="{% url photos_feed %}" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
+						<td><a href="{% url photos_feed %}" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 					<tr>
 						<th><a href="{% url photo_comments %}">{% trans "Comment" %}</a></th>
 						<td>{# comments_count #}</td>
-						<td><a href="{% url photo_comments_feed %}" title="{% trans "RSS feed for recent comments" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
+						<td><a href="{% url photo_comments_feed %}" title="{% trans "RSS feed for recent comments" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 					<tr>
 	  					<th><a href="{% url photo_favorites %}">{% trans "Favorites" %}</a></th>
 						<td>{# favorites_count #}</td>
-						<td><a href="photos/favorites/index.xml" title="{% trans "RSS feed for favorite photos" %}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
+						<td><a href="photos/favorites/index.xml" title="{% trans "RSS feed for favorite photos" %}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12"></a></td>
 					</tr>
 				</table>
 			</div>

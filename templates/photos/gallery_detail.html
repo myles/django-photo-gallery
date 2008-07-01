@@ -1,3 +1,5 @@
+{% extends "photos/base_photos.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -22,8 +24,7 @@
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
 
-{% extends "photos/base_photos.html" %}
-{% load i18n %}
+{% load i18n photos %}
 
 {% block title %}{{ gallery.title }}{% endblock %}
 
@@ -42,7 +43,7 @@
 		<ul class="slideset">
 			<li class="thumb">
 				<span class="backward">
-					<em style="background-image:url('{{ MEDIA_URL }}photos/img/moreslide_prev.gif');">
+					<em style="background-image:url('{% photo_media_prefix %}img/moreslide_prev.gif');">
 						<a href="./" style="background:#fff;">Previous page</a>
 					</em>
 				</span>
@@ -58,7 +59,7 @@
 			{% endfor %}
 			<li class="thumb">
 				<span class="forward">
-					<em style="background-image:url('{{ MEDIA_URL }}photos/img/moreslide_next.gif');">
+					<em style="background-image:url('{% photo_media_prefix %}img/moreslide_next.gif');">
 						<a href="?start=51" style="background:#fff;">Next page</a>
 					</em>
 				</span>
@@ -66,7 +67,7 @@
 		</ul>
 		
 		<div class="galleryinfo">
-			<p>{% trans "Feed for this gallery:" %} <a href="{# gallery_feed #}" class="i"><img src="{{ MEDIA_URL }}photos/img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12" /></a></p>
+			<p>{% trans "Feed for this gallery:" %} <a href="{# gallery_feed #}" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="{% trans "XML feed" %}" width="12" height="12" /></a></p>
 			<form action="." method="post" accept-charset="utf-8">
 				<fieldset>
 					<strong>Display how many posts?</strong>
@@ -91,7 +92,7 @@
 						<label for="order-new">new to old</label>
 					</div>
 				</fieldset>
-				<p><input type="image" src="{{ MEDIA_URL }}photos/img/btn_save.gif" alt="Save" class="btn"></p>
+				<p><input type="image" src="{% photo_media_prefix %}img/btn_save.gif" alt="Save" class="btn"></p>
 			</form>
 			<p>
 				<em class="count">{% trans "Photos" %} 1-25 of 132</em>

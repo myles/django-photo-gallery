@@ -9,3 +9,20 @@
 	
 	Author: Myles Braithwaite
 """
+
+from django import template
+
+register = template.Library()
+
+@register.simple_tag
+def photo_media_prefix():
+	"""
+	Returns the string contained in the setitng PHOTOS_GALLERY_MEDIA_PREFIX.
+	
+	This code is a copy of the Django Admin template tag `admin_media_prefix`.
+	"""
+	try:
+		from django.conf import settings
+	except ImportError:
+		return ''
+	return settings.PHOTOS_GALLERY_MEDIA_PREFIX

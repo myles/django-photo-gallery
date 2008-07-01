@@ -1,3 +1,5 @@
+{% extends "photos/base_photos.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -22,8 +24,7 @@
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
 
-{% extends "photos/base_photos.html" %}
-{% load i18n %}
+{% load i18n photos %}
 
 {% block title %}{{ gallery.title }}{% endblock %}
 
@@ -52,9 +53,9 @@
 			<h2 id="gallery_feeds">{% trans "Gallery Feeds" %}</h2>
 			<ul>
 				<!-- TODO: Fix this -->
-				<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="RSS feed for recent galleries" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Galleries</a></li>
-				<li><a href="http://dbowman.com/photos/index.xml" title="RSS feed for recent photos" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Photos</a></li>
-				<li><a href="http://dbowman.com/photos/comments/comments.xml" title="RSS feed for recent comments" class="i"><img src="/photos/meta/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Comments</a></li>
+				<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="RSS feed for recent galleries" class="i"><img src="{% photo_media_prefix %}/img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Galleries</a></li>
+				<li><a href="http://dbowman.com/photos/index.xml" title="RSS feed for recent photos" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Photos</a></li>
+				<li><a href="http://dbowman.com/photos/comments/comments.xml" title="RSS feed for recent comments" class="i"><img src="{% photo_media_prefix %}img/icon_feed12.gif" alt="XML feed" width="12" height="12" /> Comments</a></li>
 			</ul>
 		</div>
 	</div>
