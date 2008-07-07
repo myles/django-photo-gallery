@@ -83,7 +83,7 @@ class Gallery(models.Model):
 	
 	@property
 	def latest_photo(self):
-		photo = Photo.objects.filter(gallery=self).order_by('-created')[:1]
+		photo = Photo.objects.filter(gallery=self).order_by('-created')[0]
 		return photo
 	
 	@property
