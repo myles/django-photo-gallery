@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-07 17:37-0400\n"
+"POT-Creation-Date: 2008-07-07 17:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,7 +92,8 @@ msgstr ""
 msgid "photo"
 msgstr ""
 
-#: models.py:130 templates/photos/gallery_title.html:41
+#: models.py:130 templates/photos/gallery_archive.html:44
+#: templates/photos/gallery_title.html:41
 msgid "photos"
 msgstr ""
 
@@ -109,6 +110,34 @@ msgstr ""
 msgid "Gallery Feeds"
 msgstr ""
 
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_index.html:79
+msgid "RSS feed for recent galleries"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_archive.html:56
+#: templates/photos/gallery_archive.html:57
+#: templates/photos/gallery_detail.html:59
+#: templates/photos/gallery_index.html:79
+#: templates/photos/gallery_index.html:84
+#: templates/photos/gallery_index.html:89
+#: templates/photos/gallery_index.html:94
+#: templates/photos/gallery_title.html:41
+msgid "XML feed"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_index.html:77
+msgid "Galleries"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:56
+#: templates/photos/gallery_index.html:84
+msgid "RSS feed for recent photos"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:56
 #: templates/photos/gallery_archive.html:63
 #: templates/photos/gallery_detail.html:87
 #: templates/photos/gallery_detail.html:98
@@ -118,6 +147,15 @@ msgstr ""
 #: templates/photos/gallery_title.html:47
 #: templates/photos/photo_detail.html:56 views/feeds.py:19
 msgid "Photos"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:57
+#: templates/photos/gallery_index.html:89
+msgid "RSS feed for recent comments"
+msgstr ""
+
+#: templates/photos/gallery_archive.html:57
+msgid "Comments"
 msgstr ""
 
 #: templates/photos/gallery_detail.html:44
@@ -130,15 +168,6 @@ msgstr ""
 
 #: templates/photos/gallery_detail.html:59
 msgid "Feed for this gallery:"
-msgstr ""
-
-#: templates/photos/gallery_detail.html:59
-#: templates/photos/gallery_index.html:79
-#: templates/photos/gallery_index.html:84
-#: templates/photos/gallery_index.html:89
-#: templates/photos/gallery_index.html:94
-#: templates/photos/gallery_title.html:41
-msgid "XML feed"
 msgstr ""
 
 #: templates/photos/gallery_detail.html:89
@@ -171,28 +200,12 @@ msgstr ""
 msgid "Gallery data"
 msgstr ""
 
-#: templates/photos/gallery_index.html:77
-msgid "Galleries"
-msgstr ""
-
-#: templates/photos/gallery_index.html:79
-msgid "RSS feed for recent galleries"
-msgstr ""
-
 #: templates/photos/gallery_index.html:82
 msgid "Photo"
 msgstr ""
 
-#: templates/photos/gallery_index.html:84
-msgid "RSS feed for recent photos"
-msgstr ""
-
 #: templates/photos/gallery_index.html:87
 msgid "Comment"
-msgstr ""
-
-#: templates/photos/gallery_index.html:89
-msgid "RSS feed for recent comments"
 msgstr ""
 
 #: templates/photos/gallery_index.html:94
