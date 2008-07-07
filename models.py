@@ -139,7 +139,7 @@ class Photo(models.Model):
 	
 	@permalink
 	def get_absolute_url(self):
-		return ('photo_detail', None, {
+		return ('photo_gallery_photo_detail', None, {
 			'photo_slug'	: self.slug,
 			'gallery_slug'	: self.gallery.slug,
 		})

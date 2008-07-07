@@ -1,3 +1,5 @@
+{% extends "photos/base_photos.html" %}
+
 {#
 	This gallery design and set of template files that recreate it are licensed
 	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
@@ -21,3 +23,35 @@
 	A copy of this license is included in photos/LICENSE.txt and available online
 	at http://code.google.com/p/django-photo-gallery/wiki/License.
 #}
+
+{% load i18n photos %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+{% block body_id %}photo_detail{% endblock %}
+{% block body_class %}photosolo{% endblock %}
+
+{% block content %}
+	<div id="desc">
+		<h1>{{ photo.title }}</h1>
+		<p>{% if photo.description %}{{ photo.description }}{% else %}{% trans "No description" %}{% endif %}</p>
+	</div>
+	
+	<div id="main">
+		<p id="photo"><img src="{{ photo.get_large_url }}" atl="{{ photo.title }}" title="{{ photo.title }}"></p>
+		<div id="meta">
+			<ul>
+				{# TODO: Get next and previous working. #}
+				<li class="count">Photo 1 of 1</li>
+				<li class="date">{{ photo.created }}</li>
+				<li class="tags"></li>
+			</ul>
+		</div>
+		
+		{# TODO: Put comments here #}
+	</div>
+{% endblock %}
+
+{% block path %}
+	<a href="{% url photo_gallery_index %}">{% trans "Photos" %}</a> > <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a> > <a href="{{ gallery.get_gallery_url }}">{% trans "Gallery" %}</a> > {{ photo.title }}
+{% endblock %}

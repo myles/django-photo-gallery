@@ -80,6 +80,15 @@ def gallery_archive(request):
 		'galleries':	galleries,
 	})
 
+def photo_detail(request, gallery_slug, photo_slug):
+	gallery = get_object_or_404(Gallery, slug__iexact=gallery_slug)
+	photo = get_object_or_404(Photo, slug__iexact=photo_slug)
+	
+	return render(request=request, template_name='photos/photo_detail.html', payload={
+		'gallery':	gallery,
+		'photo':	photo,
+	})
+
 def render(request, template_name, payload):
 	footer = Module.objects.get(module_type=1)
 	description = Module.objects.get(module_type=2)
