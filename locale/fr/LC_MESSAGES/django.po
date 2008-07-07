@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-12 12:23-0400\n"
+"POT-Creation-Date: 2008-07-07 17:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,192 +16,197 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:21
+#: models.py:35
 msgid "module type"
 msgstr ""
 
-#: models.py:22
+#: models.py:36
 msgid "body"
 msgstr ""
 
-#: models.py:22
+#: models.py:36
 msgid "Use Raw HTML"
 msgstr ""
 
-#: models.py:25
+#: models.py:39
 msgid "module"
 msgstr ""
 
-#: models.py:26
+#: models.py:40
 msgid "modules"
 msgstr ""
 
-#: models.py:40 models.py:68
+#: models.py:54 models.py:113
 msgid "title"
 msgstr ""
 
-#: models.py:41 models.py:69
+#: models.py:55 models.py:114
 msgid "slug"
 msgstr ""
 
-#: models.py:42 models.py:71
+#: models.py:56 models.py:116
 msgid "description"
 msgstr ""
 
-#: models.py:43 models.py:79
+#: models.py:57 models.py:125
 msgid "created"
 msgstr ""
 
-#: models.py:44 models.py:80
+#: models.py:58 models.py:126
 msgid "modified"
 msgstr ""
 
-#: models.py:47
+#: models.py:61
 msgid "gallery"
 msgstr ""
 
-#: models.py:48
+#: models.py:62
 msgid "galleries"
 msgstr ""
 
-#: models.py:70
+#: models.py:115
 msgid "location"
 msgstr ""
 
-#: models.py:73
+#: models.py:118
 msgid "favorite"
 msgstr ""
 
-#: models.py:75
+#: models.py:120
 msgid "original"
 msgstr ""
 
-#: models.py:76
+#: models.py:121
 msgid "large"
 msgstr ""
 
-#: models.py:77
+#: models.py:122
 msgid "thumbnail"
 msgstr ""
 
-#: models.py:83
+#: models.py:123
+msgid "small"
+msgstr ""
+
+#: models.py:129
 msgid "photo"
 msgstr ""
 
-#: models.py:84 templates/photos/gallery_title.html:13
+#: models.py:130 templates/photos/gallery_title.html:41
 msgid "photos"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:26
-msgid "Feed for this gallery"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:26
-#: templates/photos/gallery_index.html:38
-#: templates/photos/gallery_index.html:43
-#: templates/photos/gallery_index.html:48
-#: templates/photos/gallery_index.html:53
-#: templates/photos/gallery_title.html:13
-msgid "XML feed"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:29
-msgid "Display how many photos?"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:30
-msgid "25"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:30
-msgid "ALL"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:31
-msgid "per page"
-msgstr ""
-
-#: templates/photos/gallery_archive.html:34
-msgid "In what order?"
-msgstr ""
-
 #: templates/photos/gallery_archive.html:35
-msgid "old to new"
+#: templates/photos/gallery_archive.html:63
+msgid "Gallery Archive"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:35
-msgid "new to old"
+#: templates/photos/gallery_archive.html:38
+msgid "All galleries"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:37
-msgid "Save"
+#: templates/photos/gallery_archive.html:52
+msgid "Gallery Feeds"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:40
-#: templates/photos/gallery_archive.html:45
-#: templates/photos/gallery_index.html:8
-#: templates/photos/gallery_index.html:58
-#: templates/photos/gallery_title.html:18
+#: templates/photos/gallery_archive.html:63
+#: templates/photos/gallery_detail.html:87
+#: templates/photos/gallery_detail.html:98
+#: templates/photos/gallery_index.html:29
+#: templates/photos/gallery_index.html:35
+#: templates/photos/gallery_index.html:102
+#: templates/photos/gallery_title.html:47
+#: templates/photos/photo_detail.html:56 views/feeds.py:19
 msgid "Photos"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:40
-msgid "of"
+#: templates/photos/gallery_detail.html:44
+msgid "Previous page"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:41
+#: templates/photos/gallery_detail.html:54
+msgid "Next page"
+msgstr ""
+
+#: templates/photos/gallery_detail.html:59
+msgid "Feed for this gallery:"
+msgstr ""
+
+#: templates/photos/gallery_detail.html:59
+#: templates/photos/gallery_index.html:79
+#: templates/photos/gallery_index.html:84
+#: templates/photos/gallery_index.html:89
+#: templates/photos/gallery_index.html:94
+#: templates/photos/gallery_title.html:41
+msgid "XML feed"
+msgstr ""
+
+#: templates/photos/gallery_detail.html:89
+msgid "&laquo; previous page"
+msgstr ""
+
+#: templates/photos/gallery_detail.html:92
 msgid "next page &raquo;"
 msgstr ""
 
-#: templates/photos/gallery_archive.html:45
+#: templates/photos/gallery_detail.html:98
+#: templates/photos/photo_detail.html:56
 msgid "Gallery"
 msgstr ""
 
-#: templates/photos/gallery_index.html:11
+#: templates/photos/gallery_index.html:38
 msgid "Recently Updated Galleries"
 msgstr ""
 
-#: templates/photos/gallery_index.html:20
+#: templates/photos/gallery_index.html:56
 msgid "Description"
 msgstr ""
 
-#: templates/photos/gallery_index.html:25
-#: templates/photos/gallery_index.html:51
+#: templates/photos/gallery_index.html:61
+#: templates/photos/gallery_index.html:92
 msgid "Favorites"
 msgstr ""
 
-#: templates/photos/gallery_index.html:33
+#: templates/photos/gallery_index.html:74
 msgid "Gallery data"
 msgstr ""
 
-#: templates/photos/gallery_index.html:36
+#: templates/photos/gallery_index.html:77
 msgid "Galleries"
 msgstr ""
 
-#: templates/photos/gallery_index.html:38
+#: templates/photos/gallery_index.html:79
 msgid "RSS feed for recent galleries"
 msgstr ""
 
-#: templates/photos/gallery_index.html:41
+#: templates/photos/gallery_index.html:82
 msgid "Photo"
 msgstr ""
 
-#: templates/photos/gallery_index.html:43
+#: templates/photos/gallery_index.html:84
 msgid "RSS feed for recent photos"
 msgstr ""
 
-#: templates/photos/gallery_index.html:46
+#: templates/photos/gallery_index.html:87
 msgid "Comment"
 msgstr ""
 
-#: templates/photos/gallery_index.html:53
+#: templates/photos/gallery_index.html:89
+msgid "RSS feed for recent comments"
+msgstr ""
+
+#: templates/photos/gallery_index.html:94
 msgid "RSS feed for favorite photos"
 msgstr ""
 
-#: templates/photos/gallery_title.html:12
+#: templates/photos/gallery_title.html:40
 msgid "Updated"
 msgstr ""
 
-#: templates/photos/gallery_title.html:14
+#: templates/photos/gallery_title.html:42
 msgid "View gallery"
+msgstr ""
+
+#: templates/photos/photo_detail.html:37
+msgid "No description"
 msgstr ""
