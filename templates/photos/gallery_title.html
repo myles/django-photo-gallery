@@ -32,7 +32,7 @@
 {% block body_class %}title auto{% endblock %}
 
 {% block content %}
-	<div id="titleimg"><a href="{{ gallery.get_gallery_url }}"><img src="{{ gallery.title_image }}" alt="{{ gallery.title }}"></a></div>
+	<div id="titleimg"><a href="{{ gallery.get_gallery_url }}"><img src="{{ gallery.latest_photo.get_large_url }}" alt="{{ gallery.title }}"></a></div>
 	
 	<div id="gallerydesc">
 		<h1><a href="{{ gallery.get_gallery_url }}">{{ gallery.title }}</a></h1>

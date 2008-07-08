@@ -41,7 +41,8 @@
 			<li>
 				<h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
 				<a href="{{ gallery.get_absolute_url }}" class="img">
-					<img src="{{ gallery.latest_photo.thumbnail }}" alt="{{ gallery.latest_photo.title }}" width="220" height="69">
+					{# TODO: Fix the image resize error #}
+					<img src="{{ gallery.latest_photo.get_thumbnail_url }}" alt="{{ gallery.latest_photo.title }}" width="220" height="69">
 				</a>
 				<p><em>({{ gallery.photo_count }})</em> {{ gallery.description_truncate }}</p>
 				<div class="date"><p>{{ gallery.modified|date:"F Y" }}</p></div>

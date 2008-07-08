@@ -41,7 +41,7 @@
 			<li>
 				<h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
 				<a href="{{ gallery.get_absolute_url }}" class="img"><img src="" alt="" width="220" height="69"></a>
-				<p><em>({{ gallery.photo_count }} photos)</em> {{ gallery.description_truncate }}</p>
+				<p><em>({{ gallery.photo_count }} {% trans "photos" %})</em> {{ gallery.description_truncate }}</p>
 				<div class="date"><p>{{ gallery.modified|date:"F Y" }}</p></div>
 			</li>
 			{% endfor %}
@@ -52,13 +52,13 @@
 		<h2 id="gallery_feeds">{% trans "Gallery Feeds" %}</h2>
 		<ul>
 			<!-- TODO: Fix this -->
-			<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="RSS feed for recent galleries" class="i"><img src="{% photo_media_prefix %}/img/btn_rss.gif" alt="XML feed" width="22" height="11" /> Galleries</a></li>
-			<li><a href="http://dbowman.com/photos/index.xml" title="RSS feed for recent photos" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="XML feed" width="22" height="11" /> Photos</a></li>
-			<li><a href="http://dbowman.com/photos/comments/comments.xml" title="RSS feed for recent comments" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="XML feed" width="22" height="11" /> Comments</a></li>
+			<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="{% trans "RSS feed for recent galleries" %}" class="i"><img src="{% photo_media_prefix %}/img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11" /> {% trans "Galleries" %}</a></li>
+			<li><a href="http://dbowman.com/photos/index.xml" title="{% trans "RSS feed for recent photos" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11" /> {% trans "Photos" %}</a></li>
+			<li><a href="http://dbowman.com/photos/comments/comments.xml" title="{% trans "RSS feed for recent comments" %}" class="i"><img src="{% photo_media_prefix %}img/btn_rss.gif" alt="{% trans "XML feed" %}" width="22" height="11" /> {% trans "Comments" %}</a></li>
 		</ul>
 	</div>
 {% endblock %}
 
 {% block path %}
-	<a href="{% url photo_gallery_index %}">Photos</a> > Gallery Archive
+	<a href="{% url photo_gallery_index %}">{% trans "Photos" %}</a> > {% trans "Gallery Archive" %}
 {% endblock %}

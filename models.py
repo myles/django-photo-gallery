@@ -83,7 +83,7 @@ class Gallery(models.Model):
 	
 	@property
 	def latest_photo(self):
-		photo = Photo.objects.filter(gallery=self).order_by('-created')[:1]
+		photo = Photo.objects.filter(gallery=self).order_by('-created')[0]
 		return photo
 	
 	@property
@@ -139,7 +139,7 @@ class Photo(models.Model):
 	
 	@permalink
 	def get_absolute_url(self):
-		return ('photo_detail', None, {
+		return ('photo_gallery_photo_detail', None, {
 			'photo_slug'	: self.slug,
 			'gallery_slug'	: self.gallery.slug,
 		})
