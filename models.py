@@ -41,9 +41,6 @@ class Module(models.Model):
 		db_table			= 'photo_modules'
 		ordering			= ('module_type', 'site',)
 	
-	class Admin:
-		list_display	= ('module_type', 'site',)
-	
 	def __unicode__(self):
 		return "%s - %s" % (self.site, self.module_type)
 
@@ -52,7 +49,7 @@ class Gallery(models.Model):
 	Gallery model.
 	"""
 	title		= models.CharField(_('title'), max_length=100)
-	slug		= models.SlugField(_('slug'), prepopulate_from=('title',), unique=True)
+	slug		= models.SlugField(_('slug'), unique=True)
 	description	= models.TextField(_('description'), blank=True, null=True)
 	created		= models.DateTimeField(_('created'), auto_now_add=True)
 	modified	= models.DateTimeField(_('modified'), auto_now=True)
@@ -62,9 +59,6 @@ class Gallery(models.Model):
 		verbose_name_plural	= _('galleries')
 		db_table			= 'photo_galleries'
 		ordering			= ('title',)
-	
-	class Admin:
-		list_display	= ('title',)
 	
 	def __unicode__(self):
 		return u"%s" % self.title
@@ -111,7 +105,7 @@ class Photo(models.Model):
 	Photo model.
 	"""
 	title		= models.CharField(_('title'), max_length=200)
-	slug		= models.SlugField(_('slug'), prepopulate_from=('title',), unique=True)
+	slug		= models.SlugField(_('slug'), unique=True)
 	location	= models.CharField(_('location'), max_length=50, blank=True, null=True)
 	description	= models.TextField(_('description'), blank=True, null=True)
 	gallery		= models.ForeignKey(Gallery)
@@ -130,9 +124,6 @@ class Photo(models.Model):
 		verbose_name_plural	= _('photos')
 		db_table			= 'photos'
 		ordering			= ('modified',)
-	
-	class Admin:
-		list_display	= ('title', 'gallery', 'location', 'favorite')
 	
 	def __unicode__(self):
 		return u"%s" % self.title
