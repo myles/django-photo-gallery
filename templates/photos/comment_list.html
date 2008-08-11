@@ -1,0 +1,65 @@
+{% extends "photos/base_photos.html" %}
+
+{#
+	This gallery design and set of template files that recreate it are licensed
+	under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.
+	You’re free to download, use, modify, and repurpose these templates in any
+	way you wish, as long as they’re not used, bartered, or sold for commercial
+	purposes. If you redistribute any work, you must release it under the same
+	license. Please include credit to the original designer/author (Stopdesign),
+	and include a visible link back to the original download and documentation page
+	http://stopdesign.com/templates/photos/.
+	
+	Templates and files are provided "as-is", without warranty of any kind, and
+	without guarantee of support or future updates.
+	
+	Stopdesign and Douglas Bowman are not liable or responsible for any content
+	published using these templates, nor are they liable or responsible for any
+	illegal activity, damage, slander, or negligence caused by or the result of
+	using or publishing content with these templates or any related variations
+	created by other entities. By downloading and/or using the template package,
+	you automatically accept the license and these terms and conditions.
+	
+	A copy of this license is included in photos/LICENSE.markdown and available online
+	at http://code.google.com/p/django-photo-gallery/wiki/License.
+#}
+
+{% load i18n photos %}
+
+{% block title %}Recent Comments{% endblock %}
+
+{% block body_id %}comment_list{% endblock %}
+{% block body_class %}recentcomments{% endblock %}
+
+{% block content %}
+	<h1 id="recent_comments">{% trans "Recent Comments" %}</h1>
+	
+	{% if comments %}
+		<ul class="commentlist">
+			{% for comment in comments %}
+				<p class="thumb"?<span class="{{ comment.get_content_object.location }}"><em style="background-image:url('{{ comment.get_content_object.get_small_url }}');"><a href="{{ comment.get_content_object.get_absolute_url }}">{{ comment.get_content_object.title }}</a></em></span></p>
+				    <p class="commenter">{% trans "On" %} {{ comment.submit_date }}27 Aug 2007, {{ comment.person_name }} <a href="{{ comment.get_absolute_url }}">wrote</a>:</p>
+				    <p>{{ comment.comment }}</p>
+				    <p class="commenton">{% trans "From" %}: <a href="{{ comment.get_content_object.get_absolute_url }}">{{ comment.get_content_object.title }}</a> <em>({{ comment.get_content_object.gallery.title }})</em></p>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>{% trans "No comments yet." %}</p>
+	{% endif %}
+	
+	<div id="feeds">
+		<h2>{% trans "Global Feeds" %}</h2>
+		<ul>
+			{#
+				TODO Fix this.
+			#}
+			<li><a href="http://dbowman.com/photos/galleries/galleries.xml" title="RSS feed for recent galleries"><img src="/photos/meta/img/btn_rss.gif" alt="RSS" width="22" height="11" /> Galleries</a></li>
+			<li><a href="http://dbowman.com/photos/index.xml" title="RSS feed for recent photos"><img src="/photos/meta/img/btn_rss.gif" alt="RSS" width="22" height="11" /> Photos</a></li>
+			<li><a href="http://dbowman.com/photos/comments/comments.xml" title="RSS feed for recent comments"><img src="/photos/meta/img/btn_rss.gif" alt="RSS" width="22" height="11" /> Comments</a></li>
+		</ul>
+	</div>
+{% endblock %}
+
+{% block path %}
+	<a href="{% url photo_gallery_index %}">{% trans "Photos" %}</a> > {% trans "Recent Comments" %}</p>
+{% endblock %}

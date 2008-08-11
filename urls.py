@@ -13,10 +13,10 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
-	# url(r'^comments/$',
-	# 	view	= 'photos.views.gallery_comments',
-	# 	name	= 'photo_gallery_comment',
-	# ),
+	url(r'^comments/$',
+		view	= 'photos.views.comments.list',
+		name	= 'photo_gallery_comment',
+	),
 	url(r'^galleries/$',
 		view	= 'photos.views.gallery.archive',
 		name	= 'photo_gallery_archive',
