@@ -1,0 +1,229 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Thomas Schraitle <tom_schr@web.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-07 17:42-0400\n"
+"PO-Revision-Date: 2012-04-08 14:32+0200\n"
+"Last-Translator: Thomas Schraitle <tom_schr@web.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: models.py:35
+msgid "module type"
+msgstr "Modultyp"
+
+# This is not entirely clear in which context it is used.
+#: models.py:36
+msgid "body"
+msgstr "Aufbau"
+
+#: models.py:36
+msgid "Use Raw HTML"
+msgstr "Original-HTML verwenden"
+
+#: models.py:39
+msgid "module"
+msgstr "Modul"
+
+#: models.py:40
+msgid "modules"
+msgstr "Module"
+
+#: models.py:54 models.py:113
+msgid "title"
+msgstr "Titel"
+
+# Maybe there is a better term for "slug", but I took this.
+#: models.py:55 models.py:114
+msgid "slug"
+msgstr "Schlagwort"
+
+#: models.py:56 models.py:116
+msgid "description"
+msgstr "Beschreibung"
+
+#: models.py:57 models.py:125
+msgid "created"
+msgstr "erstellt"
+
+#: models.py:58 models.py:126
+msgid "modified"
+msgstr "geändert"
+
+#: models.py:61
+msgid "gallery"
+msgstr "Galerie"
+
+#: models.py:62
+msgid "galleries"
+msgstr "Galerien"
+
+#: models.py:115
+msgid "location"
+msgstr "Ort"
+
+#: models.py:118
+msgid "favorite"
+msgstr "Favorit"
+
+#: models.py:120
+msgid "original"
+msgstr "Original"
+
+#: models.py:121
+msgid "large"
+msgstr "groß"
+
+#: models.py:122
+msgid "thumbnail"
+msgstr "Vorschaubild"
+
+#: models.py:123
+msgid "small"
+msgstr "klein"
+
+#: models.py:129
+msgid "photo"
+msgstr "Foto"
+
+#: models.py:130 templates/photos/gallery_archive.html:44
+#: templates/photos/gallery_title.html:41
+msgid "photos"
+msgstr "Fotos"
+
+#: templates/photos/gallery_archive.html:35
+#: templates/photos/gallery_archive.html:63
+msgid "Gallery Archive"
+msgstr "Galleriearchiv"
+
+#: templates/photos/gallery_archive.html:38
+msgid "All galleries"
+msgstr "Alle Gallerien"
+
+#: templates/photos/gallery_archive.html:52
+msgid "Gallery Feeds"
+msgstr "Gallerie-Feeds"
+
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_index.html:79
+msgid "RSS feed for recent galleries"
+msgstr "RSS-Feed für "
+
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_archive.html:56
+#: templates/photos/gallery_archive.html:57
+#: templates/photos/gallery_detail.html:59
+#: templates/photos/gallery_index.html:79
+#: templates/photos/gallery_index.html:84
+#: templates/photos/gallery_index.html:89
+#: templates/photos/gallery_index.html:94
+#: templates/photos/gallery_title.html:41
+msgid "XML feed"
+msgstr "XML-Feed"
+
+#: templates/photos/gallery_archive.html:55
+#: templates/photos/gallery_index.html:77
+msgid "Galleries"
+msgstr "Gallerien"
+
+#: templates/photos/gallery_archive.html:56
+#: templates/photos/gallery_index.html:84
+msgid "RSS feed for recent photos"
+msgstr "RSS-Feed für neue Fotos"
+
+#: templates/photos/gallery_archive.html:56
+#: templates/photos/gallery_archive.html:63
+#: templates/photos/gallery_detail.html:87
+#: templates/photos/gallery_detail.html:98
+#: templates/photos/gallery_index.html:29
+#: templates/photos/gallery_index.html:35
+#: templates/photos/gallery_index.html:102
+#: templates/photos/gallery_title.html:47
+#: templates/photos/photo_detail.html:56 views/feeds.py:19
+msgid "Photos"
+msgstr "Fotos"
+
+#: templates/photos/gallery_archive.html:57
+#: templates/photos/gallery_index.html:89
+msgid "RSS feed for recent comments"
+msgstr "RSS-Feed neue Kommentare"
+
+#: templates/photos/gallery_archive.html:57
+msgid "Comments"
+msgstr "Kommentare"
+
+#: templates/photos/gallery_detail.html:44
+msgid "Previous page"
+msgstr "Vorige Seite"
+
+#: templates/photos/gallery_detail.html:54
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: templates/photos/gallery_detail.html:59
+msgid "Feed for this gallery:"
+msgstr "Feed für diese Gallerie"
+
+#: templates/photos/gallery_detail.html:89
+msgid "&laquo; previous page"
+msgstr "&laquo; vorige Seite"
+
+#: templates/photos/gallery_detail.html:92
+msgid "next page &raquo;"
+msgstr "Nächste Seite &raquo;"
+
+#: templates/photos/gallery_detail.html:98
+#: templates/photos/photo_detail.html:56
+msgid "Gallery"
+msgstr "Gallerie"
+
+#: templates/photos/gallery_index.html:38
+msgid "Recently Updated Galleries"
+msgstr "Kürzlich aktualisierte Gallerien"
+
+#: templates/photos/gallery_index.html:56
+msgid "Description"
+msgstr "Beschreibung"
+
+#: templates/photos/gallery_index.html:61
+#: templates/photos/gallery_index.html:92
+msgid "Favorites"
+msgstr "Favoriten"
+
+#: templates/photos/gallery_index.html:74
+msgid "Gallery data"
+msgstr "Galleriedaten"
+
+#: templates/photos/gallery_index.html:82
+msgid "Photo"
+msgstr "Foto"
+
+#: templates/photos/gallery_index.html:87
+msgid "Comment"
+msgstr "Kommentar"
+
+#: templates/photos/gallery_index.html:94
+msgid "RSS feed for favorite photos"
+msgstr "RSS-Feed für Lieblingsfotos"
+
+#: templates/photos/gallery_title.html:40
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#: templates/photos/gallery_title.html:42
+msgid "View gallery"
+msgstr "Gallerie anschauen"
+
+#: templates/photos/photo_detail.html:37
+msgid "No description"
+msgstr "Keine Beschreibung"
+
